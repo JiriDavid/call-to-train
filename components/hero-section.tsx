@@ -1,0 +1,64 @@
+import Link from "next/link";
+import { CalendarCheck2, ShieldCheck } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { WhatsAppButton } from "@/components/whatsapp-button";
+import { heroContent, getUpcomingTrainingDate } from "@/lib/constants";
+
+export function HeroSection() {
+  const upcomingDate = getUpcomingTrainingDate();
+
+  return (
+    <section className="relative overflow-hidden rounded-3xl border border-rose-100 bg-white p-6 shadow-xl shadow-rose-100/60 sm:p-10">
+      <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-rose-100 blur-3xl" />
+      <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+        <div>
+          <Badge className="mb-4">Healthcare Training in Leicester</Badge>
+          <h1 className="font-display text-3xl font-bold leading-tight text-zinc-900 sm:text-5xl">
+            {heroContent.headline}
+          </h1>
+          <p className="mt-4 max-w-xl text-base text-zinc-700 sm:text-lg">
+            {heroContent.subheadline}
+          </p>
+          <p className="mt-3 flex items-center gap-2 text-sm font-medium text-zinc-600">
+            <ShieldCheck className="h-4 w-4 text-rose-600" />
+            {heroContent.trustLine}
+          </p>
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Link href="/book">
+              <Button size="lg" className="w-full sm:w-auto">
+                Book Your Seat
+              </Button>
+            </Link>
+            <WhatsAppButton message="Hi, I want to book my seat for Healthcare Assistant training." />
+          </div>
+        </div>
+
+        <Card className="border-zinc-200">
+          <CardContent className="space-y-4 p-6">
+            <p className="text-xs uppercase tracking-wide text-zinc-500">
+              Next Available Session
+            </p>
+            <p className="text-2xl font-semibold text-zinc-900">
+              {new Date(upcomingDate).toLocaleDateString("en-GB", {
+                weekday: "long",
+                day: "2-digit",
+                month: "long",
+                year: "numeric",
+              })}
+            </p>
+            <p className="flex items-center gap-2 text-sm text-zinc-600">
+              <CalendarCheck2 className="h-4 w-4 text-rose-600" />1 Day
+              Intensive - Theory + Practical
+            </p>
+            <Link href="/book">
+              <Button className="w-full">Reserve a Seat</Button>
+            </Link>
+          </CardContent>
+        </Card>
+      </div>
+    </section>
+  );
+}

@@ -1,36 +1,95 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CALL2TRAIN LTD Web App
 
-## Getting Started
+Production-ready Next.js 14 App Router website for healthcare training bookings and admin management.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- ShadCN-style reusable UI components
+- MongoDB + Mongoose
+- React Hook Form + Zod
+- Server Actions
+
+## Features
+
+- Conversion-focused landing page with structured trust and CTA sections
+- Real healthcare training content for Leicester audience
+- WhatsApp-first booking handoff after form submission
+- Duplicate booking prevention (same phone + date)
+- Admin dashboard with password login and booking status updates
+- Footer policy links (privacy and cookies)
+- SEO metadata and server components where appropriate
+
+## Environment Variables
+
+Copy `.env.example` to `.env.local` and set values:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+MONGODB_URI=your-mongodb-connection-string
+ADMIN_PASSWORD=your-admin-password
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Run Locally
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+App routes:
 
-## Learn More
+- `/` landing page
+- `/training` training overview
+- `/book` booking form
+- `/admin` admin dashboard
+- `/privacy-policy` policy page
+- `/cookies` policy page
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+	page.tsx
+	training/page.tsx
+	book/page.tsx
+	admin/page.tsx
+components/
+	hero-section.tsx
+	training-overview.tsx
+	what-you-learn.tsx
+	who-its-for.tsx
+	why-choose-us.tsx
+	about-section.tsx
+	testimonials-section.tsx
+	pricing-section.tsx
+	final-cta-section.tsx
+	whatsapp-button.tsx
+	booking-form.tsx
+	navbar.tsx
+	footer.tsx
+	testimonial-card.tsx
+	training-card.tsx
+	floating-whatsapp.tsx
+	admin-login-form.tsx
+	admin-bookings-table.tsx
+	admin-logout-button.tsx
+	ui/
+actions/
+	booking.ts
+	admin.ts
+lib/
+	mongodb.ts
+	constants.ts
+	validations.ts
+	types.ts
+	models/Booking.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Build
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
