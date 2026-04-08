@@ -1,55 +1,150 @@
 import Link from "next/link";
 import Image from "next/image";
-import {
-  BUSINESS_EMAIL,
-  policyLinks,
-  PRIMARY_PHONE,
-  SECONDARY_PHONE,
-} from "@/lib/constants";
+import type { Route } from "next";
+import { policyLinks } from "@/lib/constants";
 import logo from "@/app/library/logo.png";
 
-export function Footer() {
-  return (
-    <footer className="border-t border-rose-200 bg-gradient-to-b from-zinc-50 to-rose-50/40">
-      <div className="mx-auto grid w-full max-w-6xl gap-6 px-4 py-10 text-sm text-zinc-600 sm:grid-cols-2 sm:px-6 lg:px-8">
-        <div>
-          <div className="flex items-center gap-2">
-            <span className="rounded-xl bg-zinc-900/90 p-1.5 shadow-md ring-1 ring-zinc-700/50">
-              <Image
-                src={logo}
-                alt="CALL2TRAIN LTD logo"
-                className="h-8 w-auto rounded-md"
-              />
-            </span>
-            <p className="text-base font-semibold text-zinc-900">
-              CALL2TRAIN LTD
-            </p>
-          </div>
-          <p className="mt-2">
-            Healthcare Assistant and care-focused training in Leicester.
-          </p>
-          <p className="mt-3">
-            WhatsApp-first support for fast booking and confirmation.
-          </p>
+const productLinks = [
+  { href: "/training", label: "Training" },
+  { href: "/book", label: "Book" },
+] as const satisfies ReadonlyArray<{ href: Route; label: string }>;
 
-          <div className="mt-4 flex flex-wrap gap-3 text-xs">
+const resourceLinks = [
+  {
+    href: "/experience",
+    label: "Experience",
+  },
+  {
+    href: "/privacy-policy",
+    label: "Privacy Policy",
+  },
+  {
+    href: "/cookies",
+    label: "Cookies",
+  },
+] as const satisfies ReadonlyArray<{ href: Route; label: string }>;
+
+const companyLinks = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/admin",
+    label: "Admin",
+  },
+] as const satisfies ReadonlyArray<{ href: Route; label: string }>;
+
+const shortcutLinks = [
+  { href: "/", label: "Home", glyph: "H" },
+  { href: "/training", label: "Training", glyph: "T" },
+  { href: "/book", label: "Book", glyph: "B" },
+  { href: "/experience", label: "Experience", glyph: "E" },
+] as const satisfies ReadonlyArray<{
+  href: Route;
+  label: string;
+  glyph: string;
+}>;
+
+export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="mx-auto mt-14 w-full max-w-7xl px-4 pb-10 sm:px-6 lg:px-8">
+      <div className="rounded-[2rem] border border-zinc-200 bg-zinc-100/70 p-8 text-zinc-600 shadow-sm sm:p-10">
+        <div className="grid gap-10 lg:grid-cols-[1.45fr_1fr_1fr_1fr]">
+          <div>
+            <div className="flex items-center gap-3">
+              <span className="rounded-lg bg-zinc-900 p-1.5 shadow-sm">
+                <Image
+                  src={logo}
+                  alt="CALL2TRAIN LTD logo"
+                  className="h-6 w-auto rounded-md"
+                />
+              </span>
+              <p className="text-2xl font-semibold tracking-tight text-zinc-900">
+                CALL2TRAIN
+              </p>
+            </div>
+
+            <p className="mt-5 max-w-md text-[15px] leading-relaxed text-zinc-500">
+              CALL2TRAIN empowers learners to build practical healthcare skills
+              with focused training sessions, fast booking, and clear outcomes.
+            </p>
+
+            <div className="mt-6 flex items-center gap-4">
+              {shortcutLinks.map(({ href, label, glyph }) => (
+                <Link
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="inline-flex h-7 min-w-7 items-center justify-center rounded-md border border-zinc-300 px-1.5 text-xs font-semibold text-zinc-900 transition hover:opacity-60"
+                >
+                  {glyph}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xl font-semibold text-zinc-900">Product</p>
+            <div className="mt-4 space-y-3 text-[15px]">
+              {productLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block transition hover:text-zinc-900"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xl font-semibold text-zinc-900">Resources</p>
+            <div className="mt-4 space-y-3 text-[15px]">
+              {resourceLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="block transition hover:text-zinc-900"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <p className="text-xl font-semibold text-zinc-900">Company</p>
+            <div className="mt-4 space-y-3 text-[15px]">
+              {companyLinks.map((link) => (
+                <Link
+                  key={link.href + link.label}
+                  href={link.href}
+                  className="block transition hover:text-zinc-900"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-10 border-t border-zinc-200 pt-6 text-sm text-zinc-500 sm:flex sm:items-center sm:justify-between">
+          <p>© {currentYear} CALL2TRAIN. All rights reserved.</p>
+          <div className="mt-3 flex flex-wrap items-center gap-6 sm:mt-0">
             {policyLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="hover:text-rose-600 hover:underline"
+                className="underline-offset-4 transition hover:text-zinc-900 hover:underline"
               >
                 {link.label}
               </Link>
             ))}
           </div>
-        </div>
-
-        <div className="sm:text-right">
-          <p className="font-semibold text-zinc-900">Contact</p>
-          <p className="mt-2">WhatsApp: {PRIMARY_PHONE}</p>
-          <p>Phone: {SECONDARY_PHONE}</p>
-          <p>Email: {BUSINESS_EMAIL}</p>
         </div>
       </div>
     </footer>

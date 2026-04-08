@@ -1,0 +1,29 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1200" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF1F2"/>
+      <stop offset="1" stop-color="#FFE4E6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="900" fill="url(#bg2)"/>
+  <circle cx="980" cy="130" r="140" fill="#FB7185" fill-opacity="0.18"/>
+  <circle cx="180" cy="170" r="110" fill="#F43F5E" fill-opacity="0.14"/>
+
+  <rect x="130" y="180" width="940" height="560" rx="34" fill="#ffffff" fill-opacity="0.82" stroke="#FDA4AF"/>
+
+  <circle cx="370" cy="390" r="78" fill="#FFE4E6"/>
+  <circle cx="600" cy="390" r="78" fill="#FFE4E6"/>
+  <circle cx="830" cy="390" r="78" fill="#FFE4E6"/>
+
+  <rect x="300" y="500" width="140" height="110" rx="30" fill="#FB7185" fill-opacity="0.7"/>
+  <rect x="530" y="500" width="140" height="110" rx="30" fill="#FB7185" fill-opacity="0.7"/>
+  <rect x="760" y="500" width="140" height="110" rx="30" fill="#FB7185" fill-opacity="0.7"/>
+
+  <path d="M330 390c0-22 18-40 40-40s40 18 40 40" stroke="#9F1239" stroke-width="10" stroke-linecap="round"/>
+  <path d="M560 390c0-22 18-40 40-40s40 18 40 40" stroke="#9F1239" stroke-width="10" stroke-linecap="round"/>
+  <path d="M790 390c0-22 18-40 40-40s40 18 40 40" stroke="#9F1239" stroke-width="10" stroke-linecap="round"/>
+
+  <path d="M280 270h640" stroke="#F43F5E" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
+  <path d="M280 660h420" stroke="#F43F5E" stroke-opacity="0.45" stroke-width="12" stroke-linecap="round"/>
+</svg>
