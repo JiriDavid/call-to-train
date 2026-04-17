@@ -153,7 +153,9 @@ export default function ExperiencePage() {
               <h2 className="font-display text-2xl font-bold text-zinc-900 sm:text-3xl">
                 Inside the Learning Journey
               </h2>
-              <p className="text-sm text-zinc-600">One day. Six practical modules.</p>
+              <p className="text-sm text-zinc-600">
+                One day. Six practical modules.
+              </p>
             </div>
 
             <div className="mt-6 grid gap-3 md:grid-cols-2 lg:grid-cols-3">
@@ -165,7 +167,9 @@ export default function ExperiencePage() {
                   <p className="text-xs font-semibold uppercase tracking-wide text-rose-700">
                     Module 0{index + 1}
                   </p>
-                  <p className="mt-2 text-sm font-medium text-zinc-800">{point}</p>
+                  <p className="mt-2 text-sm font-medium text-zinc-800">
+                    {point}
+                  </p>
                 </div>
               ))}
             </div>

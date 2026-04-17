@@ -26,12 +26,14 @@ const courseModuleMeta = [
   {
     icon: ShieldCheck,
     eyebrow: "Safety Foundation",
-    summary: "Learn practical habits that prevent contamination in daily care routines.",
+    summary:
+      "Learn practical habits that prevent contamination in daily care routines.",
   },
   {
     icon: Stethoscope,
     eyebrow: "Duty of Care",
-    summary: "Recognise risk, report concerns correctly, and protect vulnerable people.",
+    summary:
+      "Recognise risk, report concerns correctly, and protect vulnerable people.",
   },
   {
     icon: Move,
@@ -41,17 +43,20 @@ const courseModuleMeta = [
   {
     icon: Siren,
     eyebrow: "Rapid Response",
-    summary: "Understand immediate actions in urgent situations before escalation.",
+    summary:
+      "Understand immediate actions in urgent situations before escalation.",
   },
   {
     icon: HeartPulse,
     eyebrow: "Compliance Mindset",
-    summary: "Apply health and safety standards consistently during real shift tasks.",
+    summary:
+      "Apply health and safety standards consistently during real shift tasks.",
   },
   {
     icon: MessageSquareHeart,
     eyebrow: "Compassionate Communication",
-    summary: "Build trust with clear, respectful communication in care settings.",
+    summary:
+      "Build trust with clear, respectful communication in care settings.",
   },
 ] as const;
 
@@ -105,7 +110,9 @@ export default function TrainingPage() {
             <Card>
               <CardContent className="p-5">
                 <p className="text-sm text-zinc-500">Duration</p>
-                <p className="mt-1 text-lg font-semibold text-zinc-900">1 Day</p>
+                <p className="mt-1 text-lg font-semibold text-zinc-900">
+                  1 Day
+                </p>
               </CardContent>
             </Card>
             <Card>
@@ -143,33 +150,33 @@ export default function TrainingPage() {
               const Icon = moduleMeta.icon;
 
               return (
-              <li
-                key={item}
-                className="group relative overflow-hidden rounded-2xl border border-white/45 bg-white/70 p-4 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/80"
-              >
-                <div className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-rose-200/45 transition group-hover:bg-rose-300/45" />
+                <li
+                  key={item}
+                  className="group relative overflow-hidden rounded-2xl border border-white/45 bg-white/70 p-4 backdrop-blur-sm transition hover:-translate-y-0.5 hover:bg-white/80"
+                >
+                  <div className="pointer-events-none absolute -right-8 -top-8 h-20 w-20 rounded-full bg-rose-200/45 transition group-hover:bg-rose-300/45" />
 
-                <div className="relative">
-                  <div className="flex items-center justify-between">
-                    <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-rose-700 ring-1 ring-rose-200/70">
-                      <Icon className="h-4 w-4" aria-hidden="true" />
-                    </span>
-                    <span className="rounded-full border border-rose-200 bg-white px-2 py-0.5 text-xs font-semibold text-rose-700">
-                      0{index + 1}
-                    </span>
+                  <div className="relative">
+                    <div className="flex items-center justify-between">
+                      <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-rose-50 text-rose-700 ring-1 ring-rose-200/70">
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                      </span>
+                      <span className="rounded-full border border-rose-200 bg-white px-2 py-0.5 text-xs font-semibold text-rose-700">
+                        0{index + 1}
+                      </span>
+                    </div>
+
+                    <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-rose-700">
+                      {moduleMeta.eyebrow}
+                    </p>
+                    <h3 className="mt-1 text-base font-semibold text-zinc-900">
+                      {item}
+                    </h3>
+                    <p className="mt-2 text-sm leading-relaxed text-zinc-600">
+                      {moduleMeta.summary}
+                    </p>
                   </div>
-
-                  <p className="mt-3 text-xs font-semibold uppercase tracking-wide text-rose-700">
-                    {moduleMeta.eyebrow}
-                  </p>
-                  <h3 className="mt-1 text-base font-semibold text-zinc-900">
-                    {item}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-zinc-600">
-                    {moduleMeta.summary}
-                  </p>
-                </div>
-              </li>
+                </li>
               );
             })}
           </ul>
@@ -187,7 +194,8 @@ export default function TrainingPage() {
 
           <ul className="mt-6 grid gap-4 md:grid-cols-3">
             {trainingOutcomePoints.map((item, index) => {
-              const meta = outcomeMeta[index] ?? outcomeMeta[outcomeMeta.length - 1];
+              const meta =
+                outcomeMeta[index] ?? outcomeMeta[outcomeMeta.length - 1];
               const Icon = meta.icon;
 
               return (

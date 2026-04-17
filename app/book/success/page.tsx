@@ -16,7 +16,9 @@ type BookingSuccessPageProps = {
   };
 };
 
-export default function BookingSuccessPage({ searchParams }: BookingSuccessPageProps) {
+export default function BookingSuccessPage({
+  searchParams,
+}: BookingSuccessPageProps) {
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
       <div className="rounded-3xl border border-emerald-200 bg-emerald-50 p-6 shadow-sm sm:p-8">
@@ -28,7 +30,8 @@ export default function BookingSuccessPage({ searchParams }: BookingSuccessPageP
           Your booking deposit is confirmed
         </h1>
         <p className="mt-3 text-zinc-700">
-          Thank you. We have received your Stripe payment and your booking is now reserved.
+          Thank you. We have received your Stripe payment and your booking is
+          now reserved.
         </p>
         {searchParams.session_id ? (
           <p className="mt-3 text-xs text-zinc-500">

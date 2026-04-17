@@ -49,7 +49,9 @@ export default function TeamsPage() {
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <section className="rounded-3xl border border-zinc-200 bg-white/75 p-6 shadow-sm backdrop-blur-sm sm:p-10">
-          <p className="text-sm uppercase tracking-wide text-rose-600">Team Training</p>
+          <p className="text-sm uppercase tracking-wide text-rose-600">
+            Team Training
+          </p>
           <h1 className="font-display mt-2 text-3xl font-bold text-zinc-900 sm:text-4xl">
             Workforce Training for Care Providers
           </h1>
@@ -76,7 +78,10 @@ export default function TeamsPage() {
 
           <div className="mt-5 grid gap-4 md:grid-cols-3">
             {teamBenefits.map(({ title, description, Icon }) => (
-              <Card key={title} className="border-zinc-200 bg-white/80 backdrop-blur-sm">
+              <Card
+                key={title}
+                className="border-zinc-200 bg-white/80 backdrop-blur-sm"
+              >
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2 text-lg text-zinc-900">
                     <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-rose-100 text-rose-700">
@@ -85,7 +90,9 @@ export default function TeamsPage() {
                     {title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="text-sm text-zinc-700">{description}</CardContent>
+                <CardContent className="text-sm text-zinc-700">
+                  {description}
+                </CardContent>
               </Card>
             ))}
           </div>
@@ -100,8 +107,8 @@ export default function TeamsPage() {
             Need a plan for multiple staff members?
           </h2>
           <p className="mt-3 text-zinc-700">
-            Share your approximate team size and preferred dates on WhatsApp, and
-            we will help you plan the right training setup.
+            Share your approximate team size and preferred dates on WhatsApp,
+            and we will help you plan the right training setup.
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <WhatsAppButton message="Hi, we are a care provider and need team training support." />

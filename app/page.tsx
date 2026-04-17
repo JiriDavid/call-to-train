@@ -64,7 +64,9 @@ export default function Home() {
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/teams">
-                    <Button variant="outline">For Companies and Care Teams</Button>
+                    <Button variant="outline">
+                      For Companies and Care Teams
+                    </Button>
                   </Link>
                   <Link href="/experience">
                     <Button className="gap-2">

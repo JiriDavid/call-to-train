@@ -1,11 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import {
-  CalendarDays,
-  CheckCircle2,
-  CreditCard,
-  Users2,
-} from "lucide-react";
+import { CalendarDays, CheckCircle2, CreditCard, Users2 } from "lucide-react";
 import { BookingForm } from "@/components/booking-form";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";

@@ -14,7 +14,8 @@ export function FinalCtaSection() {
       </h2>
       <p className="mt-3 flex items-start gap-2 text-sm text-zinc-700 sm:text-base">
         <AlertCircle className="mt-0.5 h-4 w-4 text-rose-600" />
-        Book now to secure your preferred training date, or contact us for team scheduling support.
+        Book now to secure your preferred training date, or contact us for team
+        scheduling support.
       </p>
 
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
