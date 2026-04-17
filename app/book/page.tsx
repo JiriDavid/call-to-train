@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import { CalendarDays, CheckCircle2, CreditCard, Users2 } from "lucide-react";
 import { BookingForm } from "@/components/booking-form";
 import { Button } from "@/components/ui/button";
@@ -122,7 +123,9 @@ export default function BookPage() {
           </div>
 
           <div className="lg:sticky lg:top-24">
-            <BookingForm trainingDates={availableTrainingDates} />
+            <Suspense fallback={<div>Loading...</div>}>
+              <BookingForm trainingDates={availableTrainingDates} />
+            </Suspense>
           </div>
         </section>
       </div>

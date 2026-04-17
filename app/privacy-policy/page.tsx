@@ -39,12 +39,12 @@ export default function PrivacyPolicyPage() {
             meanings:
           </p>
           <p>
-            "Cookie" means a small text file placed on your computer or device
+            &quot;Cookie&quot; means a small text file placed on your computer or device
             by this site when you visit certain parts of this site and/or when
             you use certain features of this site. Details of the Cookies used
             by this site are set out in Part 14, below; and
             <br />
-            "Cookie Law" means the relevant parts of the Privacy and Electronic
+            &quot;Cookie Law&quot; means the relevant parts of the Privacy and Electronic
             Communications (EC Directive) Regulations 2003;
           </p>
 
@@ -78,11 +78,11 @@ export default function PrivacyPolicyPage() {
           </h2>
           <p>
             Personal data is defined by the General Data Protection Regulation
-            (EU Regulation 2016/679) (the "GDPR") and the Data Protection Act
-            2018 (collectively, "the Data Protection Legislation") as 'any
+            (EU Regulation 2016/679) (the &quot;GDPR&quot;) and the Data Protection Act
+            2018 (collectively, &quot;the Data Protection Legislation&quot;) as &apos;any
             information relating to an identifiable person who can be directly
             or indirectly identified in particular by reference to an
-            identifier'.
+            identifier&apos;.
           </p>
           <p>
             Personal data is, in simpler terms, any information about you that
@@ -576,9 +576,9 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             You may also wish to sign up to one or more of the preference
-            services operating in the UK: The Telephone Preference Service ("the
-            TPS"), the Corporate Telephone Preference Service ("the CTPS"), and
-            the Mailing Preference Service ("the MPS"). These may help to
+            services operating in the UK: The Telephone Preference Service (&quot;the
+            TPS&quot;), the Corporate Telephone Preference Service (&quot;the CTPS&quot;), and
+            the Mailing Preference Service (&quot;the MPS&quot;). These may help to
             prevent you receiving unsolicited marketing. Please note, however,
             that these services will not prevent you from receiving marketing
             communications that you have consented to receiving.
@@ -616,8 +616,8 @@ export default function PrivacyPolicyPage() {
           <p>
             If you want to know what personal data we have about you, you can
             ask us for details of that personal data and for a copy of it (where
-            any such personal data is held). This is known as a "subject access
-            request".
+            any such personal data is held). This is known as a &quot;subject access
+            request&quot;.
           </p>
           <p>
             All subject access requests should be made in writing and sent to
@@ -625,7 +625,7 @@ export default function PrivacyPolicyPage() {
           </p>
           <p>
             There is not normally any charge for a subject access request. If
-            your request is 'manifestly unfounded or excessive' (for example, if
+            your request is &apos;manifestly unfounded or excessive&apos; (for example, if
             you make repetitive requests) a fee may be charged to cover our
             administrative costs in responding.
           </p>

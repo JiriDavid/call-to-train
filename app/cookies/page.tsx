@@ -19,7 +19,7 @@ export default function CookiesPage() {
           <p>
             A cookie is a small file of letters and numbers that we store on
             your browser or the hard drive of your computer if you agree.
-            Cookies contain information that is transferred to your computer's
+            Cookies contain information that is transferred to your computer&apos;s
             hard drive.
           </p>
           <p>
