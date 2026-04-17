@@ -7,17 +7,17 @@ import { trainingOverviewPoints } from "@/lib/constants";
 
 export function TrainingOverview() {
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+    <section className="rounded-3xl border border-zinc-200 bg-white/75 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <p className="text-sm uppercase tracking-wide text-rose-600">
         Training Overview
       </p>
       <h2 className="font-display mt-2 text-2xl font-bold text-zinc-900 sm:text-3xl">
-        Healthcare Assistant Training
+        Healthcare Assistant Training for Individuals and Teams
       </h2>
       <p className="mt-3 text-sm leading-relaxed text-zinc-600 sm:text-base">
-        Suitable for beginners and experienced carers. Course delivery is
-        designed around UK healthcare standards and expectations found in CQC
-        and NHS-style environments.
+        Suitable for beginners, experienced carers, and employer-led cohorts.
+        Course delivery is designed around UK healthcare standards and
+        expectations found in CQC and NHS-style environments.
       </p>
 
       <Card className="mt-6 border-zinc-200">
@@ -39,10 +39,10 @@ export function TrainingOverview() {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link href="/book">
           <Button size="lg" className="w-full sm:w-auto">
-            Book Your Seat
+            Book Individual or Team Slots
           </Button>
         </Link>
-        <WhatsAppButton message="Hi, I want details about Healthcare Assistant training content." />
+        <WhatsAppButton message="Hi, I want details about training for me or my care team." />
       </div>
     </section>
   );

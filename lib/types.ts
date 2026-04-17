@@ -1,4 +1,5 @@
 export type BookingStatus = "pending" | "confirmed";
+export type PaymentStatus = "unpaid" | "paid";
 
 export type BookingRow = {
   _id: string;
@@ -7,5 +8,7 @@ export type BookingRow = {
   email?: string;
   trainingDate: string;
   status: BookingStatus;
+  paymentStatus: PaymentStatus;
+  checkoutSessionId?: string;
   createdAt: string;
 };

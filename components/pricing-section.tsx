@@ -7,14 +7,14 @@ import { pricing } from "@/lib/constants";
 
 export function PricingSection() {
   return (
-    <section className="rounded-3xl border border-rose-100 bg-rose-50/60 p-6 shadow-sm sm:p-8">
+    <section className="rounded-3xl border border-rose-200 bg-rose-100/65 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <p className="text-sm uppercase tracking-wide text-rose-700">Pricing</p>
       <h2 className="font-display mt-2 text-2xl font-bold text-zinc-900 sm:text-3xl">
-        Simple and transparent
+        Simple and transparent for individuals and teams
       </h2>
-      <Card className="mt-5 border-rose-200 bg-white">
+      <Card className="mt-5 border-rose-200 bg-white/75">
         <CardContent className="p-6">
-          <p className="text-sm text-zinc-600">Deposit to secure your seat</p>
+          <p className="text-sm text-zinc-600">Deposit to secure your place</p>
           <p className="mt-1 text-4xl font-bold text-zinc-900">
             GBP {pricing.deposit}
           </p>
@@ -28,10 +28,10 @@ export function PricingSection() {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link href="/book">
           <Button size="lg" className="w-full sm:w-auto">
-            Pay Deposit and Book
+            Pay Deposit or Enquire for Team Package
           </Button>
         </Link>
-        <WhatsAppButton message="Hi, I want to secure my seat with the GBP 50 deposit." />
+        <WhatsAppButton message="Hi, I want to secure places with the GBP 50 deposit or discuss team pricing." />
       </div>
     </section>
   );

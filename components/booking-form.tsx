@@ -1,12 +1,12 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useSearchParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { createBookingAction } from "@/actions/booking";
 import { bookingSchema, type BookingInput } from "@/lib/validations";
-import { getWhatsAppBookingLink } from "@/lib/constants";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,6 +25,8 @@ type BookingFormProps = {
 export function BookingForm({ trainingDates }: BookingFormProps) {
   const [isPending, startTransition] = useTransition();
   const [submitted, setSubmitted] = useState(false);
+  const searchParams = useSearchParams();
+  const paymentCancelled = searchParams.get("cancelled") === "1";
 
   const {
     register,
@@ -52,10 +54,10 @@ export function BookingForm({ trainingDates }: BookingFormProps) {
       toast.success(result.message);
       setSubmitted(true);
 
-      const whatsappMessage = `Hi, my name is ${values.fullName}. I want to confirm my Healthcare Assistant training booking for ${new Date(
-        values.trainingDate,
-      ).toLocaleDateString("en-GB")}. My phone number is ${values.phone}.`;
-      const redirectLink = getWhatsAppBookingLink(whatsappMessage);
+      if (!result.checkoutUrl) {
+        toast.error("Stripe checkout could not be started.");
+        return;
+      }
 
       reset({
         fullName: "",
@@ -63,32 +65,39 @@ export function BookingForm({ trainingDates }: BookingFormProps) {
         trainingDate: trainingDates[0] ?? "",
       });
 
-      window.location.assign(redirectLink);
+      window.location.assign(result.checkoutUrl);
     });
   };
 
   return (
     <Card className="border-rose-100 shadow-lg shadow-rose-100/50">
       <CardHeader>
-        <CardTitle>Book Your Training</CardTitle>
+        <CardTitle>Book Individual or Team Training</CardTitle>
         <CardDescription>
-          Fill in this short form and continue on WhatsApp to finalize your
-          booking.
+          Fill in this short form as a learner or team contact and continue to
+          secure Stripe payment.
         </CardDescription>
       </CardHeader>
       <CardContent>
+        {paymentCancelled ? (
+          <div className="mb-6 rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-700">
+            Payment was cancelled. Your booking is not secured until payment is
+            completed.
+          </div>
+        ) : null}
+
         {submitted ? (
           <div className="mb-6 rounded-xl border border-emerald-200 bg-emerald-50 p-4 text-sm text-emerald-700">
-            Booking sent successfully. Redirecting you to WhatsApp confirmation.
+            Redirecting you to secure Stripe checkout.
           </div>
         ) : null}
 
         <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
           <div className="space-y-2">
-            <Label htmlFor="fullName">Full name</Label>
+            <Label htmlFor="fullName">Full name or team contact</Label>
             <Input
               id="fullName"
-              placeholder="Enter your full name"
+              placeholder="Enter your name or organisation contact"
               {...register("fullName")}
             />
             {errors.fullName ? (
@@ -133,7 +142,7 @@ export function BookingForm({ trainingDates }: BookingFormProps) {
           </div>
 
           <Button type="submit" className="w-full" disabled={isPending}>
-            {isPending ? "Submitting..." : "Save and Continue to WhatsApp"}
+            {isPending ? "Starting payment..." : "Pay Deposit and Confirm"}
           </Button>
         </form>
       </CardContent>

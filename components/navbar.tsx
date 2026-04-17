@@ -13,10 +13,11 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20I%20want%20to%20book%20training`;
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20I%20want%20to%20book%20training%20for%20myself%20or%20my%20team`;
 
   const navItems = [
     { href: "/training", label: "Training" },
+    { href: "/teams", label: "Teams" },
     { href: "/experience", label: "Experience" },
     { href: "/book", label: "Book" },
   ];
@@ -64,7 +65,7 @@ export function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-40 border-b border-rose-200 bg-zinc-50/95 backdrop-blur"
+      className="sticky top-0 z-40 border-b border-white/50 bg-white/60 shadow-[0_10px_30px_-20px_rgba(225,29,72,0.45)] backdrop-blur-xl backdrop-saturate-150"
     >
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         <Link
@@ -143,7 +144,7 @@ export function Navbar() {
 
       <div
         id="mobile-nav-menu"
-        className={`relative z-40 overflow-hidden border-t border-rose-100 bg-zinc-50 transition-all duration-300 ease-out md:hidden ${
+        className={`relative z-40 overflow-hidden border-t border-white/60 bg-white/70 backdrop-blur-xl transition-all duration-300 ease-out md:hidden ${
           menuOpen
             ? "max-h-80 opacity-100"
             : "pointer-events-none max-h-0 opacity-0"

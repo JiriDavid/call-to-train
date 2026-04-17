@@ -2,7 +2,7 @@ import { MessageCircleMore } from "lucide-react";
 import { WHATSAPP_NUMBER } from "@/lib/constants";
 
 export function FloatingWhatsApp() {
-  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20I%20want%20to%20book%20training`;
+  const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=Hi%20I%20want%20to%20book%20training%20for%20myself%20or%20my%20team`;
 
   return (
     <a

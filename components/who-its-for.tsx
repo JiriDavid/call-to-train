@@ -7,7 +7,7 @@ import { whoItsForPoints } from "@/lib/constants";
 
 export function WhoItsFor() {
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+    <section className="rounded-3xl border border-zinc-200 bg-white/75 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <h2 className="font-display text-2xl font-bold text-zinc-900 sm:text-3xl">
         Who This Is For
       </h2>
@@ -28,7 +28,7 @@ export function WhoItsFor() {
             Check Available Dates
           </Button>
         </Link>
-        <WhatsAppButton message="Hi, I want to know if this course is suitable for me." />
+        <WhatsAppButton message="Hi, I want to know if this training is suitable for me or my team." />
       </div>
     </section>
   );

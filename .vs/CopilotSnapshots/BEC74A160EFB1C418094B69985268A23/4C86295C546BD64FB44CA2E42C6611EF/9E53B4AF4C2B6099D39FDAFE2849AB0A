@@ -1,0 +1,11 @@
+﻿export type BookingStatus = "pending" | "confirmed";
+
+export type BookingRow = {
+  _id: string;
+  fullName: string;
+  phone: string;
+  email?: string;
+  trainingDate: string;
+  status: BookingStatus;
+  createdAt: string;
+};

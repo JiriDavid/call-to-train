@@ -1,0 +1,42 @@
+﻿import type { Metadata } from "next";
+import { BookingForm } from "@/components/booking-form";
+import { availableTrainingDates } from "@/lib/constants";
+
+export const metadata: Metadata = {
+  title: "Book Training | CALL2TRAIN LTD",
+  description:
+    "Book your Healthcare Assistant training seat and pay the deposit securely with Stripe.",
+};
+
+export default function BookPage() {
+  return (
+    <div className="relative overflow-hidden">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/care-4.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-white/84" />
+
+      <div className="relative mx-auto w-full max-w-3xl px-4 py-10 sm:px-6 lg:px-8">
+        <div className="mb-8">
+          <p className="text-sm uppercase tracking-wide text-rose-600">Booking</p>
+          <h1 className="font-display mt-2 text-3xl font-bold text-zinc-900">
+            Secure Your Training Seat in Minutes
+          </h1>
+          <p className="mt-3 text-zinc-600">
+            Submit your details and training date, then complete your deposit
+            payment securely with Stripe.
+          </p>
+        </div>
+
+        <BookingForm trainingDates={availableTrainingDates} />
+      </div>
+    </div>
+  );
+}

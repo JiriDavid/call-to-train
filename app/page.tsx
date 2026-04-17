@@ -9,22 +9,25 @@ import { FinalCtaSection } from "@/components/final-cta-section";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "CALL2TRAIN LTD | Become a Certified Healthcare Assistant in 1 Day",
+  title: "CALL2TRAIN LTD | Healthcare Training for Individuals and Teams",
   description:
-    "Healthcare Assistant training in Leicester with theory and practical sessions. Book quickly and continue via WhatsApp.",
+    "Healthcare Assistant training in Leicester for individual learners and company teams, with theory and practical sessions.",
 };
 
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
-      <div
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        src="/care-1.mp4"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
         aria-hidden="true"
-        className="home-bg home-bg-top motion-safe:animate-float-slow"
       />
-      <div
-        aria-hidden="true"
-        className="home-bg home-bg-bottom motion-safe:animate-float-slower"
-      />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/22 to-black/28" />
 
       <div className="relative mx-auto w-full max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
         <div className="space-y-10">
@@ -40,7 +43,7 @@ export default function Home() {
           </div>
 
           <section
-            className="animate-fade-up rounded-3xl border border-rose-100 bg-white/90 p-5 shadow-xl shadow-rose-100/45 sm:p-8"
+            className="animate-fade-up rounded-3xl border border-rose-100 bg-white/75 p-5 shadow-xl shadow-rose-100/45 backdrop-blur-sm sm:p-8"
             style={{ animationDelay: "180ms" }}
           >
             <div className="grid gap-6 lg:grid-cols-[1fr_1.1fr] lg:items-center">
@@ -50,15 +53,19 @@ export default function Home() {
                   New Layout
                 </p>
                 <h2 className="font-display mt-3 text-2xl font-bold text-zinc-900 sm:text-3xl">
-                  Shorter homepage, richer visual story
+                  Individual growth and team capability in one place
                 </h2>
                 <p className="mt-3 max-w-xl text-zinc-600">
                   We moved detailed learning journey content into a focused page
                   so this homepage stays fast and clear. View who the training
-                  is for, what you will learn, and learner stories in one place.
+                  is for, what teams will gain, and learner or employer stories
+                  in one place.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
+                  <Link href="/teams">
+                    <Button variant="outline">For Companies and Care Teams</Button>
+                  </Link>
                   <Link href="/experience">
                     <Button className="gap-2">
                       Explore Learning Experience

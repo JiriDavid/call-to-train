@@ -10,11 +10,11 @@ export function HeroSection() {
   const upcomingDate = getUpcomingTrainingDate();
 
   return (
-    <section className="relative overflow-hidden rounded-3xl border border-rose-100 bg-white p-6 shadow-xl shadow-rose-100/60 sm:p-10">
+    <section className="relative overflow-hidden rounded-3xl border border-rose-100 bg-white/75 p-6 shadow-xl shadow-rose-100/60 backdrop-blur-sm sm:p-10">
       <div className="absolute -right-10 -top-10 h-48 w-48 rounded-full bg-rose-100 blur-3xl" />
       <div className="relative grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
         <div>
-          <Badge className="mb-4">Healthcare Training in Leicester</Badge>
+          <Badge className="mb-4">For Individuals and Care Teams</Badge>
           <h1 className="font-display text-3xl font-bold leading-tight text-zinc-900 sm:text-5xl">
             {heroContent.headline}
           </h1>
@@ -29,17 +29,17 @@ export function HeroSection() {
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link href="/book">
               <Button size="lg" className="w-full sm:w-auto">
-                Book Your Seat
+                Book Individual or Team Training
               </Button>
             </Link>
-            <WhatsAppButton message="Hi, I want to book my seat for Healthcare Assistant training." />
+            <WhatsAppButton message="Hi, I want to book training for myself or my care team." />
           </div>
         </div>
 
         <Card className="border-zinc-200">
           <CardContent className="space-y-4 p-6">
             <p className="text-xs uppercase tracking-wide text-zinc-500">
-              Next Available Session
+              Next Open Session
             </p>
             <p className="text-2xl font-semibold text-zinc-900">
               {new Date(upcomingDate).toLocaleDateString("en-GB", {
@@ -53,8 +53,11 @@ export function HeroSection() {
               <CalendarCheck2 className="h-4 w-4 text-rose-600" />1 Day
               Intensive - Theory + Practical
             </p>
+            <p className="text-xs text-zinc-500">
+              Need private dates for your team? Enquire on WhatsApp.
+            </p>
             <Link href="/book">
-              <Button className="w-full">Reserve a Seat</Button>
+              <Button className="w-full">Reserve Places</Button>
             </Link>
           </CardContent>
         </Card>

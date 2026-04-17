@@ -12,8 +12,9 @@ export const availableTrainingDates = [
 ];
 
 export const heroContent = {
-  headline: "Become a Certified Healthcare Assistant in Just 1 Day",
-  subheadline: "Theory and Practical Training in Leicester",
+  headline: "Train Individuals or Entire Care Teams in Just 1 Day",
+  subheadline:
+    "Theory and practical healthcare training in Leicester for personal growth and workforce development",
   trustLine: "Compliant with UK healthcare standards",
 };
 
@@ -40,6 +41,8 @@ export const whoItsForPoints = [
   "Care workers needing refresher training",
   "People entering the healthcare sector",
   "Support workers",
+  "Care agencies onboarding new staff",
+  "Care home and domiciliary care teams",
 ];
 
 export const whyChooseUsPoints = [
@@ -48,14 +51,15 @@ export const whyChooseUsPoints = [
   "Small class sizes",
   "Industry-relevant training",
   "Fast certification",
+  "Team cohort support for employers",
 ];
 
 export const companyOverview = {
   title: "About CALL2TRAIN LTD",
   description:
-    "CALL2TRAIN LTD is a Leicester-based healthcare training provider focused on preparing carers and support workers for real care settings.",
+    "CALL2TRAIN LTD is a Leicester-based healthcare training provider focused on preparing carers, support workers, and care teams for real care settings.",
   mission:
-    "Our mission is to train healthcare workers with quality, compliance-focused, practical instruction aligned to CQC and NHS-style expectations.",
+    "Our mission is to train healthcare workers and organisational teams with quality, compliance-focused, practical instruction aligned to CQC and NHS-style expectations.",
 };
 
 export const testimonials = [
@@ -73,9 +77,9 @@ export const testimonials = [
   },
   {
     name: "Aisha B.",
-    role: "Returning Carer",
+    role: "Care Coordinator",
     quote:
-      "Excellent refresher. It covered safeguarding, communication, and moving support in one focused day.",
+      "Excellent refresher for our new starters and existing carers. It covered safeguarding, communication, and moving support in one focused day.",
   },
 ];
 
@@ -96,7 +100,7 @@ export const trainingOutcomePoints = [
 
 export const pricing = {
   deposit: 50,
-  note: "Pay GBP 50 deposit to secure your seat. Remaining balance is paid on the training day.",
+  note: "Pay GBP 50 deposit per learner to secure seats. Remaining balance is paid on the training day. Team packages are available via enquiry.",
 };
 
 export const policyLinks = [

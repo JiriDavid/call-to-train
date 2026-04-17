@@ -29,6 +29,25 @@ const bookingSchema = new Schema(
       enum: ["pending", "confirmed"],
       default: "pending",
     },
+    paymentStatus: {
+      type: String,
+      enum: ["unpaid", "paid"],
+      default: "unpaid",
+    },
+    checkoutSessionId: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    stripePaymentIntentId: {
+      type: String,
+      required: false,
+      trim: true,
+    },
+    paidAt: {
+      type: Date,
+      required: false,
+    },
     createdAt: {
       type: Date,
       default: Date.now,

@@ -1,11 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Route } from "next";
+import {
+  BookOpenCheck,
+  CalendarCheck2,
+  Home,
+  Sparkles,
+  Users2,
+} from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import { policyLinks } from "@/lib/constants";
 import logo from "@/app/library/logo.png";
 
 const productLinks = [
   { href: "/training", label: "Training" },
+  { href: "/teams", label: "Teams" },
   { href: "/book", label: "Book" },
 ] as const satisfies ReadonlyArray<{ href: Route; label: string }>;
 
@@ -36,14 +45,15 @@ const companyLinks = [
 ] as const satisfies ReadonlyArray<{ href: Route; label: string }>;
 
 const shortcutLinks = [
-  { href: "/", label: "Home", glyph: "H" },
-  { href: "/training", label: "Training", glyph: "T" },
-  { href: "/book", label: "Book", glyph: "B" },
-  { href: "/experience", label: "Experience", glyph: "E" },
+  { href: "/", label: "Home", Icon: Home },
+  { href: "/training", label: "Training", Icon: BookOpenCheck },
+  { href: "/teams", label: "Teams", Icon: Users2 },
+  { href: "/book", label: "Book", Icon: CalendarCheck2 },
+  { href: "/experience", label: "Experience", Icon: Sparkles },
 ] as const satisfies ReadonlyArray<{
   href: Route;
   label: string;
-  glyph: string;
+  Icon: LucideIcon;
 }>;
 
 export function Footer() {
@@ -68,19 +78,20 @@ export function Footer() {
             </div>
 
             <p className="mt-5 max-w-md text-[15px] leading-relaxed text-zinc-500">
-              CALL2TRAIN empowers learners to build practical healthcare skills
-              with focused training sessions, fast booking, and clear outcomes.
+              CALL2TRAIN empowers individual learners, care agencies, and
+              employers to build practical healthcare skills with focused
+              training sessions, fast booking, and clear outcomes.
             </p>
 
             <div className="mt-6 flex items-center gap-4">
-              {shortcutLinks.map(({ href, label, glyph }) => (
+              {shortcutLinks.map(({ href, label, Icon }) => (
                 <Link
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="inline-flex h-7 min-w-7 items-center justify-center rounded-md border border-zinc-300 px-1.5 text-xs font-semibold text-zinc-900 transition hover:opacity-60"
+                  className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-zinc-300 bg-white text-zinc-900 transition hover:-translate-y-0.5 hover:border-rose-300 hover:text-rose-700"
                 >
-                  {glyph}
+                  <Icon className="h-4 w-4" aria-hidden="true" />
                 </Link>
               ))}
             </div>

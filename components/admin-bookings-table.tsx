@@ -46,6 +46,7 @@ export function AdminBookingsTable({ bookings }: AdminBookingsTableProps) {
             <th className="px-4 py-3">Name</th>
             <th className="px-4 py-3">Phone</th>
             <th className="px-4 py-3">Date</th>
+            <th className="px-4 py-3">Payment</th>
             <th className="px-4 py-3">Status</th>
             <th className="px-4 py-3">Action</th>
           </tr>
@@ -53,6 +54,7 @@ export function AdminBookingsTable({ bookings }: AdminBookingsTableProps) {
         <tbody>
           {bookings.map((booking) => {
             const isConfirmed = booking.status === "confirmed";
+            const isPaid = booking.paymentStatus === "paid";
 
             return (
               <tr key={booking._id} className="border-t border-zinc-100">
@@ -62,6 +64,11 @@ export function AdminBookingsTable({ bookings }: AdminBookingsTableProps) {
                 <td className="px-4 py-3 text-zinc-700">{booking.phone}</td>
                 <td className="px-4 py-3 text-zinc-700">
                   {new Date(booking.trainingDate).toLocaleDateString("en-GB")}
+                </td>
+                <td className="px-4 py-3">
+                  <Badge variant={isPaid ? "success" : "muted"}>
+                    {booking.paymentStatus}
+                  </Badge>
                 </td>
                 <td className="px-4 py-3">
                   <Badge variant={isConfirmed ? "success" : "muted"}>
@@ -77,11 +84,13 @@ export function AdminBookingsTable({ bookings }: AdminBookingsTableProps) {
                         isConfirmed ? "pending" : "confirmed",
                       )
                     }
-                    disabled={isPending}
+                    disabled={isPending || !isPaid}
                     variant={isConfirmed ? "outline" : "default"}
                   >
                     {isPending
                       ? "Saving..."
+                      : !isPaid
+                        ? "Awaiting Payment"
                       : isConfirmed
                         ? "Mark Pending"
                         : "Confirm"}

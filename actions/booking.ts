@@ -5,11 +5,13 @@ import { bookingSchema, type BookingInput } from "@/lib/validations";
 import { connectToDatabase } from "@/lib/mongodb";
 import { Booking } from "@/lib/models/Booking";
 import { isAdminAuthenticated } from "@/actions/admin";
+import { createStripeCheckoutSession } from "@/lib/stripe";
 import type { BookingRow } from "@/lib/types";
 
 export type ActionResult = {
   success: boolean;
   message: string;
+  checkoutUrl?: string;
 };
 
 export async function createBookingAction(
@@ -27,9 +29,38 @@ export async function createBookingAction(
   try {
     await connectToDatabase();
 
-    await Booking.create({
-      ...parsed.data,
-      status: "pending",
+    const existingBooking = await Booking.findOne({
+      phone: parsed.data.phone,
+      trainingDate: parsed.data.trainingDate,
+    });
+
+    if (existingBooking?.paymentStatus === "paid") {
+      return {
+        success: false,
+        message: "This booking has already been paid for.",
+      };
+    }
+
+    const booking =
+      existingBooking ??
+      (await Booking.create({
+        ...parsed.data,
+        status: "pending",
+        paymentStatus: "unpaid",
+      }));
+
+    const checkoutSession = await createStripeCheckoutSession({
+      bookingId: String(booking._id),
+      fullName: parsed.data.fullName,
+      phone: parsed.data.phone,
+      trainingDate: parsed.data.trainingDate,
+    });
+
+    await Booking.findByIdAndUpdate(booking._id, {
+      fullName: parsed.data.fullName,
+      phone: parsed.data.phone,
+      trainingDate: parsed.data.trainingDate,
+      checkoutSessionId: checkoutSession.id,
     });
 
     revalidatePath("/");
@@ -37,7 +68,8 @@ export async function createBookingAction(
 
     return {
       success: true,
-      message: "Booking received. We will contact you shortly to confirm.",
+      message: "Redirecting you to Stripe checkout...",
+      checkoutUrl: checkoutSession.url,
     };
   } catch (error) {
     const duplicateError =
@@ -55,7 +87,7 @@ export async function createBookingAction(
 
     return {
       success: false,
-      message: "Unable to save your booking right now. Please try again.",
+      message: "Unable to start Stripe checkout right now. Please try again.",
     };
   }
 }
@@ -70,6 +102,7 @@ export async function getBookingsAction(): Promise<BookingRow[]> {
   return bookings.map((booking) => ({
     ...booking,
     _id: String(booking._id),
+    paymentStatus: booking.paymentStatus ?? "unpaid",
     createdAt: new Date(booking.createdAt).toISOString(),
   }));
 }

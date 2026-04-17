@@ -7,7 +7,7 @@ import { companyOverview } from "@/lib/constants";
 
 export function AboutSection() {
   return (
-    <section className="rounded-3xl border border-zinc-200 bg-white p-6 shadow-sm sm:p-8">
+    <section className="rounded-3xl border border-zinc-200 bg-white/75 p-6 shadow-sm backdrop-blur-sm sm:p-8">
       <p className="text-sm uppercase tracking-wide text-rose-600">About Us</p>
       <h2 className="font-display mt-2 text-2xl font-bold text-zinc-900 sm:text-3xl">
         {companyOverview.title}
@@ -38,10 +38,10 @@ export function AboutSection() {
       <div className="mt-6 flex flex-col gap-3 sm:flex-row">
         <Link href="/book">
           <Button size="lg" className="w-full sm:w-auto">
-            Book Your Seat
+            Book Individual or Team Training
           </Button>
         </Link>
-        <WhatsAppButton message="Hi, I want to learn more about CALL2TRAIN before booking." />
+        <WhatsAppButton message="Hi, I want to learn more about CALL2TRAIN for individual or team training." />
       </div>
     </section>
   );

@@ -20,10 +20,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://call2train.co.uk"),
   title: "CALL2TRAIN LTD | Healthcare Assistant Training Leicester",
   description:
-    "Healthcare Assistant Training with theory and practical sessions in Leicester. Certified in 1 day with easy WhatsApp booking.",
+    "Healthcare Assistant training in Leicester for individual learners and care teams, with theory and practical sessions and easy WhatsApp booking.",
   openGraph: {
     title: "CALL2TRAIN LTD",
-    description: "Certified Healthcare Assistant training in Leicester.",
+    description:
+      "Healthcare Assistant training in Leicester for individuals and company teams.",
     type: "website",
   },
 };
