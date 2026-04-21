@@ -83,20 +83,20 @@ export default function Home() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/images/training-scene.svg"
+                    src="/care-1.jpg"
                     alt="Healthcare professional learning essential care skills and procedures"
                     width={1200}
-                    height={900}
-                    className="h-52 w-full object-cover sm:h-full"
+                    height={400}
+                    className="h-40 w-full object-cover sm:h-48"
                   />
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/images/care-team.svg"
+                    src="/care-2.jpg"
                     alt="Dedicated healthcare team providing compassionate patient care"
                     width={1200}
-                    height={900}
-                    className="h-52 w-full object-cover sm:h-full"
+                    height={400}
+                    className="h-40 w-full object-cover sm:h-48"
                   />
                 </div>
               </div>
