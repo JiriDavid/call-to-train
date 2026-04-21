@@ -58,7 +58,7 @@ export default function Home() {
                 <p className="mt-3 max-w-xl text-zinc-600">
                   Join thousands of healthcare professionals who have advanced
                   their careers through our comprehensive Healthcare Assistant
-                  training. Whether you're starting your journey or upskilling
+                  training. Whether you&apos;re starting your journey or upskilling
                   your entire care team, we provide the knowledge, skills, and
                   certification you need to deliver exceptional patient care.
                 </p>
