@@ -74,7 +74,7 @@ export default function ExperiencePage() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/images/training-scene.svg"
+                    src="/care-5.jpg"
                     alt="Illustration of practical healthcare training modules"
                     width={1200}
                     height={900}
@@ -83,7 +83,7 @@ export default function ExperiencePage() {
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/images/care-team.svg"
+                    src="/care-3.jpg"
                     alt="Illustration of care team training and collaboration"
                     width={1200}
                     height={900}

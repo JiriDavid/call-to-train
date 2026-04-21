@@ -83,7 +83,7 @@ export default function Home() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/care-1.jpg"
+                    src="/care-5.jpg"
                     alt="Healthcare professional learning essential care skills and procedures"
                     width={1200}
                     height={400}
@@ -92,7 +92,7 @@ export default function Home() {
                 </div>
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
-                    src="/care-2.jpg"
+                    src="/care-3.jpg"
                     alt="Dedicated healthcare team providing compassionate patient care"
                     width={1200}
                     height={400}
