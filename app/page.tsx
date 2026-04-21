@@ -50,33 +50,30 @@ export default function Home() {
               <div>
                 <p className="inline-flex items-center gap-2 rounded-full border border-rose-200 bg-rose-50 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-rose-700">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                  New Layout
+                  NHS Approved Training
                 </p>
                 <h2 className="font-display mt-3 text-2xl font-bold text-zinc-900 sm:text-3xl">
-                  Individual growth and team capability in one place
+                  Transform Your Healthcare Career or Team
                 </h2>
                 <p className="mt-3 max-w-xl text-zinc-600">
-                  We moved detailed learning journey content into a focused page
-                  so this homepage stays fast and clear. View who the training
-                  is for, what teams will gain, and learner or employer stories
-                  in one place.
+                  Join thousands of healthcare professionals who have advanced their careers through our comprehensive Healthcare Assistant training. Whether you're starting your journey or upskilling your entire care team, we provide the knowledge, skills, and certification you need to deliver exceptional patient care.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/teams">
                     <Button variant="outline">
-                      For Companies and Care Teams
+                      Corporate Team Training
                     </Button>
                   </Link>
                   <Link href="/experience">
                     <Button className="gap-2">
-                      Explore Learning Experience
+                      Start Your Journey
                       <ArrowRight className="h-4 w-4" aria-hidden="true" />
                     </Button>
                   </Link>
                   <Link href="/training">
                     <Button variant="outline">
-                      View Full Training Breakdown
+                      Course Curriculum
                     </Button>
                   </Link>
                 </div>
@@ -86,7 +83,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
                     src="/images/training-scene.svg"
-                    alt="Illustration of healthcare training checklist and learner profile"
+                    alt="Healthcare professional learning essential care skills and procedures"
                     width={1200}
                     height={900}
                     className="h-52 w-full object-cover sm:h-full"
@@ -95,7 +92,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-2xl border border-rose-200 bg-rose-50">
                   <Image
                     src="/images/care-team.svg"
-                    alt="Illustration representing collaborative care team readiness"
+                    alt="Dedicated healthcare team providing compassionate patient care"
                     width={1200}
                     height={900}
                     className="h-52 w-full object-cover sm:h-full"
