@@ -56,14 +56,16 @@ export default function Home() {
                   Transform Your Healthcare Career or Team
                 </h2>
                 <p className="mt-3 max-w-xl text-zinc-600">
-                  Join thousands of healthcare professionals who have advanced their careers through our comprehensive Healthcare Assistant training. Whether you're starting your journey or upskilling your entire care team, we provide the knowledge, skills, and certification you need to deliver exceptional patient care.
+                  Join thousands of healthcare professionals who have advanced
+                  their careers through our comprehensive Healthcare Assistant
+                  training. Whether you're starting your journey or upskilling
+                  your entire care team, we provide the knowledge, skills, and
+                  certification you need to deliver exceptional patient care.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link href="/teams">
-                    <Button variant="outline">
-                      Corporate Team Training
-                    </Button>
+                    <Button variant="outline">Corporate Team Training</Button>
                   </Link>
                   <Link href="/experience">
                     <Button className="gap-2">
@@ -72,9 +74,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/training">
-                    <Button variant="outline">
-                      Course Curriculum
-                    </Button>
+                    <Button variant="outline">Course Curriculum</Button>
                   </Link>
                 </div>
               </div>
