@@ -58,9 +58,10 @@ export default function Home() {
                 <p className="mt-3 max-w-xl text-zinc-600">
                   Join thousands of healthcare professionals who have advanced
                   their careers through our comprehensive Healthcare Assistant
-                  training. Whether you&apos;re starting your journey or upskilling
-                  your entire care team, we provide the knowledge, skills, and
-                  certification you need to deliver exceptional patient care.
+                  training. Whether you&apos;re starting your journey or
+                  upskilling your entire care team, we provide the knowledge,
+                  skills, and certification you need to deliver exceptional
+                  patient care.
                 </p>
 
                 <div className="mt-6 flex flex-wrap gap-3">
